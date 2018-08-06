@@ -1,6 +1,6 @@
 graphql:
   servlet:
-    mapping: / graphql
+    mapping: /graphql
     enabled: true
     corsEnabled: true
 spring:
@@ -15,4 +15,4 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update  # 新增数据库链接必备的参数
+      ddl-auto: update
