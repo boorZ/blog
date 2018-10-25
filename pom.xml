@@ -59,24 +59,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-spring-boot-starter</artifactId>
-			<version>5.0.2</version>
-		</dependency>
-		<!-- 嵌入GraphiQL工具 -->
-		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphiql-spring-boot-starter</artifactId>
-			<version>5.0.2</version>
-		</dependency>
-		<!-- 嵌入Voyager工具 -->
-		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>voyager-spring-boot-starter</artifactId>
-			<version>5.0.2</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -93,12 +75,18 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- mybatis的分页插件 -->
 		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-java</artifactId>
-			<version>9.0</version>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.6</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

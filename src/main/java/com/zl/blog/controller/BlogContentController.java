@@ -1,8 +1,8 @@
 package com.zl.blog.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.zl.blog.model.User;
-import com.zl.blog.service.UserService;
+import com.zl.blog.model.BlogContent;
+import com.zl.blog.service.BlogContentService;
 import com.zl.blog.utils.ZlUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
  * @date 2018/8/17
  */
 @RestController
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("blog")
+public class BlogContentController {
     @Autowired
-    private UserService userService;
+    private BlogContentService userService;
 
     @RequestMapping("hello")
     public String hellos(){
@@ -24,25 +24,23 @@ public class UserController {
     }
 
     @PutMapping(value = "/findSaveAndFlush")
-    public void put(User user){
+    public void put(BlogContent user){
         userService.saveAndFlush(user);
     }
 
     @PostMapping("/addone")
-    public ZlUtils add(User user){
+    public ZlUtils add(BlogContent user){
         return userService.saveAndFlush(user);
     }
 
     @GetMapping("/findone")
-    public User get(Integer id){
+    public BlogContent get(Integer id){
         return userService.findById(id);
     }
 
     @RequestMapping(value = "/findAll")
-    public PageInfo<User> gets(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+    public PageInfo<BlogContent> gets(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                @RequestParam(value = "pageSize",defaultValue = "1")int pageSize){
-        System.out.println("====A" + pageNum);
-        System.out.println("====B" + pageSize);
         return  userService.findAll(pageNum, pageSize);
     }
 

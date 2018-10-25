@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="gb2312">
+		<title>首页_个人博客</title>
+		<meta name="keywords" content="个人博客" />
+		<meta name="description" content="周" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/base.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<link href="css/m.css" rel="stylesheet">
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" />
+		<script>
+			window.onload = function() {
+				var oH2 = document.getElementsByTagName("h2")[0];
+				var oUl = document.getElementsByTagName("ul")[0];
+				oH2.onclick = function() {
+					var style = oUl.style;
+					style.display = style.display == "block" ? "none" : "block";
+					oH2.className = style.display == "block" ? "open" : ""
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="tophead">
+				<div class="logo">
+					<a href="#">个人博客</a>
+				</div>
+				<nav class="topnav" id="topnav">
+					<ul>
+						<li>
+							<a href="index.html">网站首页</a>
+						</li>
+						<li>
+							<a href="about.html">关于我</a>
+						</li>
+						<li>
+							<a href="list.html">学无止境</a>
+						</li>
+						<!--<li>-->
+							<!--<a href="gbook.html">留言</a>-->
+						<!--</li>-->
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<article id="blog">
+			<div class="blogs">
+				<li v-for="da in datas">
+					<span class="blogpic"><a href="/"><img src="images/text02.jpg"></a></span>
+					<h3 class="blogtitle"><a href="/">{{da.titles}}</a></h3>
+					<div class="bloginfo">
+						<p>{{da.contents}}</p>
+					</div>
+					<div class="autor">
+						<span class="lm">
+							<a href="/" title="1" target="_blank" class="classname">{{da.categorys}}</a>
+						</span>
+						<span class="dtime">{{da.createAt.substring(0,9)}}</span>
+						<span class="viewnum">浏览（<a href="/">{{da.pageView}}</a>）</span>
+						<span class="readmore"><a href="content.html">阅读原文</a></span>
+					</div>
+				</li>
+			</div>
+
+			<div class="sidebar">
+				<div class="about">
+					<div class="avatar"> <img src="images/avatar.jpg" alt=""> </div>
+					<p class="abname">周林</p>
+					<p class="abposition">Java攻城狮</p>
+					<div class="abtext">潜心研究技术 <br>一边工作一边积累经验</div>
+				</div>
+				<div class="search">
+					<form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+						<input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+						<input name="show" value="title" type="hidden">
+						<input name="tempid" value="1" type="hidden">
+						<input name="tbname" value="news" type="hidden">
+						<input name="Submit" class="input_submit" value="搜索" type="submit">
+					</form>
+				</div>
+				<div class="cloud">
+					<h2 class="hometitle">标签云</h2>
+					<ul>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+						<a>我最吊</a>
+					</ul>
+				</div>
+				<div class="weixin">
+					<h2 class="hometitle">官方微信</h2>
+					<ul>
+						<img src="images/wx.png">
+					</ul>
+				</div>
+				<div class="paihang">
+					<h2 class="hometitle">点击排行</h2>
+					<ul>
+						<li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】Test...</a></b>
+							<p><i><img src="images/t02.jpg"></i>展示展示展示展示展示展示展示展示展示展示展示展示...</p>
+						</li>
+					</ul>
+				</div>
+				<div class="paihang">
+					<h2 class="hometitle">站长推荐</h2>
+					<ul>
+						<li><b><a href="/download/div/2015-04-10/746.html" target="_blank">【活动作品】Test...</a></b>
+							<p><i><img src="images/t02.jpg"></i>展示展示展示展示展示展示展示展示展示展示展示展示...</p>
+						</li>
+					</ul>
+				</div>
+				<div class="links">
+					<h2 class="hometitle">友情链接</h2>
+					<ul>
+						<li>
+							<a href="#" title="个人博客">个人博客</a>
+						</li>
+						<li>
+							<a href="#" title="个人博客">个人博客</a>
+						</li>
+						<li>
+							<a href="#" title="个人博客">个人博客</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</article>
+		<div class="blank"></div>
+		<footer>
+			<p>Zhou Lin <a href="/">个人博客</a> <!--<a href="/">蜀ICP备11002373号-1</a>--></p>
+		</footer>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<script src="js/axios.min.js"></script>
+		<script src="js/nav.js"></script>
+		<script>
+			var vmm = new Vue({
+				el: "#blog",
+				data: {
+					datas: [],
+					pageNum:1,
+					pageSize:10,
+					pages : null,
+				},
+				mounted: function () {
+					this.all();
+				},
+				methods:{
+					/**  查所有带分页 **/
+					all(){
+						axios.get('/blog/findAll', {params:{pageNum:this.pageNum, pageSize:this.pageSize}} ).then(function (response) {
+							vmm.datas = [];
+							vmm.pages = response.data.pages;
+							// 内容
+							for (var i = 0; i < response.data.list.length; i++) {
+								vmm.datas.push(response.data.list[i]);
+							}
+						}).catch(function (error) {
+							console.log(error);
+						});
+					}
+				}
+			})
+
+		</script>
+	</body>
+
+</html>
